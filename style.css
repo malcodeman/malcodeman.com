@@ -76,3 +76,15 @@ p {
   width: 64px;
   border-radius: 50%;
 }
+
+.name {
+  font-size: 2rem;
+}
+
+.jobDescription {
+  font-size: 1rem;
+}
+
+.location {
+  font-size: 1rem;
+}
