@@ -54,14 +54,14 @@ p {
 .mainContent {
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
   top: -32px;
+  padding: 0 32px;
 }
 
 @media (min-width: 768px) {
   .mainContent {
-    padding: 256px 0;
+    padding: 256px 64px;
     position: initial;
     top: initial;
   }
@@ -87,4 +87,41 @@ p {
 
 .location {
   font-size: 1rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.linkIconWrapper {
+  padding: 6px;
+  border-radius: 50%;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkLabel {
+  margin-left: 10px;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.meta {
+  margin-left: auto;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
 }
