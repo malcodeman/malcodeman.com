@@ -101,6 +101,10 @@ p {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.link:hover .followIcon {
+  transform: translateX(10px);
+}
+
 .linkIconWrapper {
   padding: 6px;
   border-radius: 50%;
@@ -124,4 +128,9 @@ p {
 .icon {
   height: 20px;
   width: 20px;
+}
+
+.followIcon {
+  margin-left: 20px;
+  transition-duration: 0.5s;
 }
