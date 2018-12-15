@@ -37,7 +37,7 @@ p {
   min-height: 100vh;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .grid {
     grid-template-columns: 1fr 1fr;
     padding: 36px 36px 0 36px;
@@ -56,12 +56,12 @@ p {
   flex-direction: column;
   position: relative;
   top: -32px;
-  padding: 0 32px;
+  padding: 0 36px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .mainContent {
-    padding: 256px 64px;
+    justify-content: center;
     position: initial;
     top: initial;
   }
