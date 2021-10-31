@@ -17,9 +17,7 @@ function Project(props: props) {
     "var(--chakra-colors-whiteAlpha-200)"
   );
   const isLargeDevice = useMediaQuery("only screen and (min-width: 80em)");
-  const boxProps = isLargeDevice
-    ? { whileHover: { scale: 1.1 }, whileTap: { scale: 0.9 } }
-    : {};
+  const boxProps = isLargeDevice ? { whileHover: { scale: 1.1 } } : {};
   return (
     <Link
       {...rest}
@@ -32,6 +30,7 @@ function Project(props: props) {
       <Box
         {...boxProps}
         as={motion.div}
+        whileTap={{ scale: 0.9 }}
         bg={bg}
         padding="4"
         borderRadius="md"
@@ -39,7 +38,7 @@ function Project(props: props) {
       >
         <Text textTransform="uppercase">{language}</Text>
         <Heading>{name}</Heading>
-        <Text>{description}</Text>
+        <Text opacity="0.8">{description}</Text>
       </Box>
     </Link>
   );

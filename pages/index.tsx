@@ -5,7 +5,8 @@ import { Button } from "@chakra-ui/button";
 import { Container, Grid } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { gql, GraphQLClient } from "graphql-request";
-import { useKeyboardEvent } from "@react-hookz/web";
+import { useKeyboardEvent, useMediaQuery } from "@react-hookz/web";
+import { motion } from "framer-motion";
 import { ExternalLink } from "react-feather";
 import GithubIcon from "simple-icons/icons/github";
 import DevToIcon from "simple-icons/icons/devdotto";
@@ -108,6 +109,10 @@ type props = {
 function Home(props: props) {
   const { pinnedItems } = props;
   const { setColorMode } = useColorMode();
+  const isLargeDevice = useMediaQuery("only screen and (min-width: 80em)");
+  const wavingHandEmojiProps = isLargeDevice
+    ? { whileHover: { scale: 1.2, rotate: 22 } }
+    : {};
 
   useKeyboardEvent("d", () => setColorMode("dark"), [], { event: "keyup" });
   useKeyboardEvent("l", () => setColorMode("light"), [], { event: "keyup" });
@@ -118,7 +123,7 @@ function Home(props: props) {
         <title>malcodeman.com</title>
       </Head>
       <Container maxWidth="container.xl">
-        <Grid gridTemplateColumns={{ lg: "1fr 1fr" }} gridGap={{ lg: 6 }}>
+        <Grid gridTemplateColumns={{ lg: "1fr 1fr" }} gridGap={{ lg: 20 }}>
           <Flex
             paddingY="6"
             flexDir="column"
@@ -128,9 +133,25 @@ function Home(props: props) {
             height={{ lg: "100vh" }}
           >
             <Box>
-              <Heading mb="2">Hello, I’m Amer Karamustafić. 👋</Heading>
-              <Text mb="4" opacity="0.8">
-                I’m full-stack engineer from Sarajevo, Bosnia and Herzegovina.
+              <Heading mb="6" fontSize={{ base: "4xl", lg: "5xl" }}>
+                Hello, I’m Amer Karamustafić.{" "}
+                <motion.span
+                  {...wavingHandEmojiProps}
+                  style={{ display: "inline-flex" }}
+                  whileTap={{ scale: 1.2, rotate: 22 }}
+                >
+                  👋
+                </motion.span>
+              </Heading>
+              <Text mb="2" opacity="0.8">
+                I’m a full-stack engineer working on fintech startup at{" "}
+                <Link href="https://ministryofprogramming.com" isExternal>
+                  Ministry of Programming
+                </Link>
+                . Currently living in Sarajevo, Bosnia and Herzegovina.
+              </Text>
+              <Text mb="2" opacity="0.8">
+                I like running, hiking and writing code in dark theme.
               </Text>
             </Box>
             <Box>
