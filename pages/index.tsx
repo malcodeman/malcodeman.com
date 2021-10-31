@@ -3,7 +3,9 @@ import Head from "next/head";
 import { Box, Flex, Heading, Stack, Link, Text } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { Container, Grid } from "@chakra-ui/react";
+import { useColorMode } from "@chakra-ui/color-mode";
 import { gql, GraphQLClient } from "graphql-request";
+import { useKeyboardEvent } from "@react-hookz/web";
 import { ExternalLink } from "react-feather";
 import GithubIcon from "simple-icons/icons/github";
 import DevToIcon from "simple-icons/icons/devdotto";
@@ -105,6 +107,11 @@ type props = {
 
 function Home(props: props) {
   const { pinnedItems } = props;
+  const { setColorMode } = useColorMode();
+
+  useKeyboardEvent("d", () => setColorMode("dark"), [], { event: "keyup" });
+  useKeyboardEvent("l", () => setColorMode("light"), [], { event: "keyup" });
+
   return (
     <>
       <Head>
@@ -121,8 +128,8 @@ function Home(props: props) {
             height={{ lg: "100vh" }}
           >
             <Box>
-              <Heading mb="2">Hello, I’m Amer Karamustafić.</Heading>
-              <Text mb="4">
+              <Heading mb="2">Hello, I’m Amer Karamustafić. 👋</Heading>
+              <Text mb="4" opacity="0.8">
                 I’m full-stack engineer from Sarajevo, Bosnia and Herzegovina.
               </Text>
             </Box>
