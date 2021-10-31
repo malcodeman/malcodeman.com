@@ -162,6 +162,8 @@ function Home(props: props) {
                       href={item.url}
                       leftIcon={item.icon}
                       mr="2"
+                      justifyContent={["flex-start", "center"]}
+                      width={["100%", "auto"]}
                       rightIcon={<ExternalLink size={16} />}
                     >
                       {item.text}
