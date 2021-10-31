@@ -16,7 +16,7 @@ class MyDocument extends Document {
           <meta property="og:image" content="opengraph.png"></meta>
         </Head>
         <body>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          <ColorModeScript initialColorMode={theme.initialColorMode} />
           <Main />
           <div id="root" />
           <NextScript />
