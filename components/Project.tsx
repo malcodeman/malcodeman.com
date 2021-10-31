@@ -1,5 +1,7 @@
 import { Box, Heading, Link, Text } from "@chakra-ui/layout";
 import { useColorModeValue } from "@chakra-ui/color-mode";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "@react-hookz/web";
 
 type props = {
   url: string;
@@ -14,16 +16,27 @@ function Project(props: props) {
     "var(--chakra-colors-gray-100)",
     "var(--chakra-colors-whiteAlpha-200)"
   );
+  const isLargeDevice = useMediaQuery("only screen and (min-width: 80em)");
+  const boxProps = isLargeDevice
+    ? { whileHover: { scale: 1.1 }, whileTap: { scale: 0.9 } }
+    : {};
   return (
     <Link
       {...rest}
-      src={url}
+      href={url}
       isExternal
       _hover={{
         textDecoration: "none",
       }}
     >
-      <Box bg={bg} padding="4" borderRadius="md">
+      <Box
+        {...boxProps}
+        as={motion.div}
+        bg={bg}
+        padding="4"
+        borderRadius="md"
+        height="100%"
+      >
         <Text textTransform="uppercase">{language}</Text>
         <Heading>{name}</Heading>
         <Text>{description}</Text>
