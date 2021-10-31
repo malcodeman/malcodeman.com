@@ -150,7 +150,7 @@ function Home(props: props) {
                 </Link>
                 . Currently living in Sarajevo, Bosnia and Herzegovina.
               </Text>
-              <Text mb="2" opacity="0.8">
+              <Text mb="6" opacity="0.8">
                 I like running, hiking and writing code in dark theme.
               </Text>
             </Box>

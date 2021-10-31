@@ -5,7 +5,7 @@
 
 My online portfolio. Made with performance in mind. ⚡
 
-![Screenshot](docs/images/screenshot.jpg)
+![Screenshot](readme/screenshot.png)
 
 ## License
 
