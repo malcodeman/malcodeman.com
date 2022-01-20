@@ -7,7 +7,7 @@ type props = {
   url: string;
   language: string;
   name: string;
-  description: string;
+  description?: string;
 };
 
 function Project(props: props) {
@@ -38,7 +38,7 @@ function Project(props: props) {
       >
         <Text textTransform="uppercase">{language}</Text>
         <Heading>{name}</Heading>
-        <Text opacity="0.8">{description}</Text>
+        {description ? <Text opacity="0.8">{description}</Text> : null}
       </Box>
     </Link>
   );

@@ -49,6 +49,13 @@ const WEBSITES = [
     description: "Directory of accomplished Bosnians in the IT industry.",
   },
 ];
+const ARTICLES = [
+  {
+    url: "https://dev.to/malcodeman/how-to-build-a-slack-birthday-bot-2bk0",
+    language: "javascript",
+    name: "How to build a slack birthday bot",
+  },
+];
 const ENDPOINT = "https://api.github.com/graphql";
 const QUERY = gql`
   {
@@ -190,7 +197,7 @@ function Home(props: props) {
                 ))}
               </Grid>
             </Box>
-            <Box as="section">
+            <Box as="section" marginBottom="6">
               <Heading mb="4" textTransform="uppercase" fontSize="md">
                 Websites
               </Heading>
@@ -202,6 +209,21 @@ function Home(props: props) {
                     language=""
                     name={item.name}
                     description={item.description}
+                  />
+                ))}
+              </Grid>
+            </Box>
+            <Box as="section">
+              <Heading mb="4" textTransform="uppercase" fontSize="md">
+                Articles
+              </Heading>
+              <Grid gridGap="4" gridTemplateColumns={{ xl: "1fr 1fr" }}>
+                {ARTICLES.map((item) => (
+                  <Project
+                    key={item.url}
+                    url={item.url}
+                    language={item.language}
+                    name={item.name}
                   />
                 ))}
               </Grid>
