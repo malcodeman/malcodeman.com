@@ -14,6 +14,12 @@ const theme = extendTheme({
         scrollbarWidth: "thin",
         overflowX: "hidden",
       },
+      "html::-webkit-scrollbar": {
+        width: "8px",
+      },
+      "html::-webkit-scrollbar-thumb": {
+        backgroundColor: "#72757b",
+      },
     },
   },
 });
