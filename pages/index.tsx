@@ -1,6 +1,14 @@
 import React from "react";
 import Head from "next/head";
-import { Box, Flex, Heading, Stack, Link, Text } from "@chakra-ui/layout";
+import {
+  Box,
+  Flex,
+  Heading,
+  Link,
+  Text,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { Container, Grid } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/color-mode";
@@ -8,9 +16,12 @@ import { gql, GraphQLClient } from "graphql-request";
 import { useKeyboardEvent, useMediaQuery } from "@react-hookz/web";
 import { motion } from "framer-motion";
 import { ExternalLink } from "react-feather";
-import GithubIcon from "simple-icons/icons/github";
-import DevToIcon from "simple-icons/icons/devdotto";
-import DribbbleIcon from "simple-icons/icons/dribbble";
+import {
+  siGithub,
+  siDevdotto,
+  siDribbble,
+  siStackoverflow,
+} from "simple-icons/icons";
 
 import SimpleIcon from "../components/SimpleIcon";
 import Project from "../components/Project";
@@ -19,17 +30,22 @@ const LINKS = [
   {
     url: "https://github.com/malcodeman",
     text: "GitHub",
-    icon: <SimpleIcon size={16} path={GithubIcon.path} />,
+    icon: <SimpleIcon size={16} path={siGithub.path} />,
   },
   {
     url: "https://dev.to/malcodeman",
     text: "DEV",
-    icon: <SimpleIcon size={16} path={DevToIcon.path} />,
+    icon: <SimpleIcon size={16} path={siDevdotto.path} />,
   },
   {
     url: "https://dribbble.com/malcodeman",
     text: "Dribbble",
-    icon: <SimpleIcon size={16} path={DribbbleIcon.path} />,
+    icon: <SimpleIcon size={16} path={siDribbble.path} />,
+  },
+  {
+    url: "https://stackoverflow.com/users/14981767/malcodeman",
+    text: "Stack Overflow",
+    icon: <SimpleIcon size={16} path={siStackoverflow.path} />,
   },
 ];
 const WEBSITES = [
@@ -161,24 +177,23 @@ function Home(props: props) {
                 I like running, hiking and writing code in dark theme.
               </Text>
             </Box>
-            <Box>
-              <Stack direction={["column", "row"]} spacing="2">
-                {LINKS.map((item) => (
-                  <Link key={item.url} href={item.url} isExternal>
-                    <Button
-                      href={item.url}
-                      leftIcon={item.icon}
-                      mr="2"
-                      justifyContent={["flex-start", "center"]}
-                      width={["100%", "auto"]}
-                      rightIcon={<ExternalLink size={16} />}
-                    >
-                      {item.text}
-                    </Button>
-                  </Link>
-                ))}
-              </Stack>
-            </Box>
+            <Wrap direction={["column", "row"]} spacing="2">
+              {LINKS.map((item) => (
+                <WrapItem key={item.url}>
+                  <Button
+                    as={Link}
+                    href={item.url}
+                    isExternal
+                    leftIcon={item.icon}
+                    justifyContent={["flex-start", "center"]}
+                    width={["100%", "auto"]}
+                    rightIcon={<ExternalLink size={16} />}
+                  >
+                    {item.text}
+                  </Button>
+                </WrapItem>
+              ))}
+            </Wrap>
           </Flex>
           <Box paddingY="6">
             <Box as="section" marginBottom="6">
