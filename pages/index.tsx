@@ -167,11 +167,11 @@ function Home(props: props) {
                 </motion.span>
               </Heading>
               <Text mb="2" opacity="0.8">
-                I’m a full-stack engineer working on fintech startup at{" "}
-                <Link href="https://ministryofprogramming.com" isExternal>
-                  Ministry of Programming
+                I’m a full-stack engineer working at fintech startup called{" "}
+                <Link href="https://nuri.com" isExternal>
+                  Nuri
                 </Link>
-                . Currently living in Sarajevo, Bosnia and Herzegovina.
+                . Currently living in Berlin.
               </Text>
               <Text mb="6" opacity="0.8">
                 I like running, hiking and writing code in dark theme.
