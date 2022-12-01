@@ -15,7 +15,7 @@ import { useColorMode } from "@chakra-ui/color-mode";
 import { gql, GraphQLClient } from "graphql-request";
 import { useKeyboardEvent, useMediaQuery } from "@react-hookz/web";
 import { motion } from "framer-motion";
-import { ExternalLink } from "react-feather";
+import { FiExternalLink } from "react-icons/fi";
 import {
   siGithub,
   siDevdotto,
@@ -187,7 +187,7 @@ function Home(props: props) {
                     leftIcon={item.icon}
                     justifyContent={["flex-start", "center"]}
                     width={["100%", "auto"]}
-                    rightIcon={<ExternalLink size={16} />}
+                    rightIcon={<FiExternalLink size={16} />}
                   >
                     {item.text}
                   </Button>
