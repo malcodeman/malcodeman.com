@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint",
-    "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.10",
@@ -26,16 +24,10 @@
     "simple-icons": "^7.21.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.15.0",
-    "@testing-library/react": "^12.1.2",
     "@types/node": "^18.11.10",
     "@types/react": "^18.0.25",
-    "babel-jest": "^27.3.1",
     "eslint": "7",
     "eslint-config-next": "12.0.1",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.3.1",
-    "react-test-renderer": "^17.0.2",
     "typescript": "4.4.4"
   }
 }
