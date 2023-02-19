@@ -1,267 +1,55 @@
-import React from "react";
 import Head from "next/head";
-import {
-  Box,
-  Flex,
-  Heading,
-  Link,
-  Text,
-  Wrap,
-  WrapItem,
-} from "@chakra-ui/layout";
-import { Button } from "@chakra-ui/button";
-import { Container, Grid } from "@chakra-ui/react";
-import { useColorMode } from "@chakra-ui/color-mode";
-import { gql, GraphQLClient } from "graphql-request";
-import { useKeyboardEvent, useMediaQuery } from "@react-hookz/web";
-import { motion } from "framer-motion";
-import { FiExternalLink } from "react-icons/fi";
-import {
-  siGithub,
-  siDevdotto,
-  siDribbble,
-  siStackoverflow,
-} from "simple-icons/icons";
+import Link from "next/link";
 
-import SimpleIcon from "../components/SimpleIcon";
-import Project from "../components/Project";
-
-const LINKS = [
-  {
-    url: "https://github.com/malcodeman",
-    text: "GitHub",
-    icon: <SimpleIcon size={16} path={siGithub.path} />,
-  },
-  {
-    url: "https://dev.to/malcodeman",
-    text: "DEV",
-    icon: <SimpleIcon size={16} path={siDevdotto.path} />,
-  },
-  {
-    url: "https://dribbble.com/malcodeman",
-    text: "Dribbble",
-    icon: <SimpleIcon size={16} path={siDribbble.path} />,
-  },
-  {
-    url: "https://stackoverflow.com/users/14981767/malcodeman",
-    text: "Stack Overflow",
-    icon: <SimpleIcon size={16} path={siStackoverflow.path} />,
-  },
-];
-const WEBSITES = [
-  {
-    url: "https://www.resumebuilder.dev",
-    name: "resumebuilder.dev",
-    description: "Free resume builder for developers.",
-  },
-  {
-    url: "https://www.botify.ai",
-    name: "botify.ai",
-    description: "A no-code platform for building conversation apps.",
-  },
-  {
-    url: "https://bosnianswho.design",
-    name: "bosnianswho.design",
-    description: "Directory of accomplished Bosnians in the IT industry.",
-  },
-];
-const ARTICLES = [
-  {
-    url: "https://dev.to/malcodeman/how-to-build-a-slack-birthday-bot-2bk0",
-    language: "javascript",
-    name: "How to build a slack birthday bot",
-  },
-];
-const ENDPOINT = "https://api.github.com/graphql";
-const QUERY = gql`
-  {
-    user(login: "malcodeman") {
-      pinnedItems(first: 6) {
-        totalCount
-        edges {
-          node {
-            ... on Repository {
-              id
-              name
-              description
-              url
-              createdAt
-              languages(first: 1) {
-                edges {
-                  node {
-                    id
-                    name
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-type props = {
-  pinnedItems: {
-    user: {
-      pinnedItems: {
-        totalCount: number;
-        edges: {
-          node: {
-            id: number;
-            name: string;
-            description: string;
-            url: string;
-            createdAt: string;
-            languages: {
-              edges: {
-                node: {
-                  id: string;
-                  name: string;
-                };
-              }[];
-            };
-          };
-        }[];
-      };
-    };
-  };
-};
-
-function Home(props: props) {
-  const { pinnedItems } = props;
-  const { setColorMode } = useColorMode();
-  const isLargeDevice = useMediaQuery("only screen and (min-width: 80em)");
-  const wavingHandEmojiProps = isLargeDevice
-    ? { whileHover: { scale: 1.2, rotate: 22 } }
-    : {};
-
-  useKeyboardEvent("d", () => setColorMode("dark"), [], { event: "keyup" });
-  useKeyboardEvent("l", () => setColorMode("light"), [], { event: "keyup" });
-
+function Home() {
   return (
     <>
       <Head>
         <title>malcodeman.com</title>
       </Head>
-      <Container maxWidth="container.xl">
-        <Grid gridTemplateColumns={{ lg: "1fr 1fr" }} gridGap={{ lg: 20 }}>
-          <Flex
-            paddingY="6"
-            flexDir="column"
-            justifyContent="space-between"
-            top={{ lg: "0" }}
-            position={{ lg: "sticky" }}
-            height={{ lg: "100vh" }}
-          >
-            <Box>
-              <Heading mb="6" fontSize={{ base: "4xl", lg: "5xl" }}>
-                Hello, I’m Amer Karamustafić.{" "}
-                <motion.span
-                  {...wavingHandEmojiProps}
-                  style={{ display: "inline-flex" }}
-                  whileTap={{ scale: 1.2, rotate: 22 }}
-                >
-                  👋
-                </motion.span>
-              </Heading>
-              <Text mb="2" opacity="0.8">
-                I’m a full-stack engineer working at fintech startup called{" "}
-                <Link href="https://nuri.com" isExternal>
-                  Nuri
-                </Link>
-                . Currently living in Berlin.
-              </Text>
-              <Text mb="6" opacity="0.8">
+      <div>
+        <header className="container mx-auto px-4 py-4 flex justify-between">
+          <Link href="/" className="flex items-center" passHref>
+            <div className="bg-[#F28444] h-4 w-4 rounded-full mr-1" />
+            malcodeman
+          </Link>
+          <nav className="space-x-4">
+            <Link href="/">Home</Link>
+            <Link href="/#projects">Projects</Link>
+            <Link href="/#contact">Contact</Link>
+          </nav>
+        </header>
+        <div className="container mx-auto px-4 py-4 grid gap-4 sm:grid-cols-[2fr_1fr]">
+          <div className="bg-[#A7D5F2]/50 rounded-lg p-8 flex flex-col justify-between">
+            <div className="">
+              <h1 className="text-4xl mb-4">
+                Hello, I’m Amer Karamustafić. 👋
+              </h1>
+              <p>
+                I’m a full-stack engineer working at fintech startup called
+                Nuri. Currently living in Berlin.
+              </p>
+              <p className="mb-4">
                 I like running, hiking and writing code in dark theme.
-              </Text>
-            </Box>
-            <Wrap direction={["column", "row"]} spacing="2">
-              {LINKS.map((item) => (
-                <WrapItem key={item.url}>
-                  <Button
-                    as={Link}
-                    href={item.url}
-                    isExternal
-                    leftIcon={item.icon}
-                    justifyContent={["flex-start", "center"]}
-                    width={["100%", "auto"]}
-                    rightIcon={<FiExternalLink size={16} />}
-                  >
-                    {item.text}
-                  </Button>
-                </WrapItem>
-              ))}
-            </Wrap>
-          </Flex>
-          <Box paddingY="6">
-            <Box as="section" marginBottom="6">
-              <Heading mb="4" textTransform="uppercase" fontSize="md">
-                Projects
-              </Heading>
-              <Grid gridGap="4" gridTemplateColumns={{ xl: "1fr 1fr" }}>
-                {pinnedItems.user.pinnedItems.edges.map((item) => (
-                  <Project
-                    key={item.node.id}
-                    url={item.node.url}
-                    language={item.node.languages.edges[0]?.node.name}
-                    name={item.node.name}
-                    description={item.node.description}
-                  />
-                ))}
-              </Grid>
-            </Box>
-            <Box as="section" marginBottom="6">
-              <Heading mb="4" textTransform="uppercase" fontSize="md">
-                Websites
-              </Heading>
-              <Grid gridGap="4" gridTemplateColumns={{ xl: "1fr 1fr" }}>
-                {WEBSITES.map((item) => (
-                  <Project
-                    key={item.url}
-                    url={item.url}
-                    language=""
-                    name={item.name}
-                    description={item.description}
-                  />
-                ))}
-              </Grid>
-            </Box>
-            <Box as="section">
-              <Heading mb="4" textTransform="uppercase" fontSize="md">
-                Articles
-              </Heading>
-              <Grid gridGap="4" gridTemplateColumns={{ xl: "1fr 1fr" }}>
-                {ARTICLES.map((item) => (
-                  <Project
-                    key={item.url}
-                    url={item.url}
-                    language={item.language}
-                    name={item.name}
-                  />
-                ))}
-              </Grid>
-            </Box>
-          </Box>
-        </Grid>
-      </Container>
+              </p>
+            </div>
+            <div>
+              <a href="mailto:malcodeman@gmail.com">
+                <button className="px-4 py-2 font-semibold text-sm bg-[#F28444] text-white rounded-full">
+                  Contact me
+                </button>
+              </a>
+            </div>
+          </div>
+          <img
+            src="amer.jpg"
+            alt=""
+            className="rounded-lg h-full object-cover"
+          />
+        </div>
+      </div>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const graphQLClient = new GraphQLClient(ENDPOINT, {
-    headers: {
-      authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
-    },
-  });
-  const pinnedItems = await graphQLClient.request(QUERY);
-  return {
-    props: {
-      pinnedItems,
-    },
-  };
 }
 
 export default Home;

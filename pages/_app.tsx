@@ -1,9 +1,7 @@
 import React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import * as Fathom from "fathom-client";
-
-import theme from "../theme";
+import "../styles/globals.css";
 
 const FATHOM_SITE_ID = "DYETUSIG";
 const IS_PROD = process.env.NEXT_PUBLIC_VERCEL_ENV === "production";
@@ -17,11 +15,7 @@ function App({ Component, pageProps }: AppProps) {
       });
     }
   }, []);
-  return (
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default App;
