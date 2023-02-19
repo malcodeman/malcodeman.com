@@ -1,7 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ColorModeScript } from "@chakra-ui/react";
-
-import theme from "../theme";
 
 class MyDocument extends Document {
   render() {
@@ -13,10 +10,9 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta name="og:description" content="malcodeman.com" />
           <meta name="description" content="malcodeman.com" />
-          <meta property="og:image" content="opengraph.png"></meta>
+          <meta property="og:image" content="opengraph.png" />
         </Head>
-        <body>
-          <ColorModeScript initialColorMode={theme.initialColorMode} />
+        <body className="dark:text-[#A7D5F2] dark:bg-[#202126]">
           <Main />
           <div id="root" />
           <NextScript />
