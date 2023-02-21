@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@react-hookz/web";
 import Head from "next/head";
 import Link from "next/link";
 import {
@@ -29,13 +30,35 @@ const LINKS = [
 ];
 
 function Home() {
+  const device = useMediaQuery("(min-width : 1024px)") ? "macbook" : "iphone";
+  const colorMode = useMediaQuery("(prefers-color-scheme: dark)")
+    ? "dark"
+    : "light";
+  const PROJECTS = [
+    {
+      url: "https://www.resumebuilder.dev",
+      title: "resumebuilder.dev",
+      description:
+        "Privacy-focused and login-free resume builder for developers.",
+      bgColor: "#818C30",
+      image: `resume_builder_dev_${device}_${colorMode}.png`,
+    },
+    {
+      url: "https://www.bosnianswho.design",
+      title: "bosnianswho.design",
+      description:
+        "A directory of inspiring Bosnians and Herzegovinians in the IT industry.",
+      bgColor: "#D9AD77",
+      image: `bosnians_who_design_${device}_${colorMode}.png`,
+    },
+  ];
   return (
     <>
       <Head>
         <title>malcodeman.com</title>
       </Head>
       <div>
-        <header className="container mx-auto px-4 py-4 flex justify-between">
+        <header className="container mx-auto p-4 flex justify-between">
           <Link href="/" className="hidden sm:flex items-center" passHref>
             <div className="bg-[#F28444] h-4 w-4 rounded-full mr-1" />
             malcodeman
@@ -46,7 +69,7 @@ function Home() {
             <Link href="/#contact">Contact</Link>
           </nav>
         </header>
-        <div className="container mx-auto px-4 py-4 grid gap-4 sm:grid-cols-[2fr_1fr]">
+        <div className="container mx-auto p-4 grid gap-4 sm:grid-cols-[2fr_1fr] mb-4">
           <div className="bg-[#A7D5F2]/50 rounded-lg p-8 flex flex-col justify-between">
             <div className="dark:text-[#202126]">
               <h1 className="text-4xl mb-4">
@@ -87,6 +110,23 @@ function Home() {
             alt=""
             className="rounded-lg h-full object-cover"
           />
+        </div>
+        <div className="container mx-auto p-4 grid gap-4 sm:grid-cols-[1fr_1fr]">
+          {PROJECTS.map((item) => (
+            <a key={item.url} href={item.url} target="_blank" rel="noreferrer">
+              <div
+                className={`flex flex-col p-8 rounded-lg h-full dark:text-white bg-[${item.bgColor}]/50`}
+              >
+                <h1 className="text-lg font-semibold">{item.title}</h1>
+                <p className="text-sm mb-4 opacity-80">{item.description}</p>
+                <img
+                  src={item.image}
+                  alt=""
+                  className="rounded-lg object-cover mt-auto"
+                />
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </>
