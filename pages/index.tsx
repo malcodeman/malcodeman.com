@@ -40,7 +40,7 @@ function Home() {
       title: "resumebuilder.dev",
       description:
         "Privacy-focused and login-free resume builder for developers.",
-      bgColor: "#818C30",
+      bgColor: "bg-[#818C30]/50",
       image: `resume_builder_dev_${device}_${colorMode}.png`,
     },
     {
@@ -48,7 +48,7 @@ function Home() {
       title: "bosnianswho.design",
       description:
         "A directory of inspiring Bosnians and Herzegovinians in the IT industry.",
-      bgColor: "#D9AD77",
+      bgColor: "bg-[#D9AD77]/50",
       image: `bosnians_who_design_${device}_${colorMode}.png`,
     },
   ];
@@ -115,7 +115,7 @@ function Home() {
           {PROJECTS.map((item) => (
             <a key={item.url} href={item.url} target="_blank" rel="noreferrer">
               <div
-                className={`flex flex-col p-8 rounded-lg h-full dark:text-white bg-[${item.bgColor}]/50`}
+                className={`flex flex-col p-8 rounded-lg h-full dark:text-white ${item.bgColor}`}
               >
                 <h1 className="text-lg font-semibold">{item.title}</h1>
                 <p className="text-sm mb-4 opacity-80">{item.description}</p>
