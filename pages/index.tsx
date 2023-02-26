@@ -30,7 +30,6 @@ const LINKS = [
 ];
 
 function Home() {
-  const device = useMediaQuery("(min-width : 1024px)") ? "macbook" : "iphone";
   const colorMode = useMediaQuery("(prefers-color-scheme: dark)")
     ? "dark"
     : "light";
@@ -41,7 +40,13 @@ function Home() {
       description:
         "Privacy-focused and login-free resume builder for developers.",
       bgColor: "bg-[#818C30]/50",
-      image: `resume_builder_dev_${device}_${colorMode}.png`,
+      picture: [
+        {
+          srcSet: `resume_builder_dev_macbook_${colorMode}.png`,
+          media: "(min-width: 1024px)",
+        },
+      ],
+      image: `resume_builder_dev_iphone_${colorMode}.png`,
     },
     {
       url: "https://www.bosnianswho.design",
@@ -49,7 +54,13 @@ function Home() {
       description:
         "A directory of inspiring Bosnians and Herzegovinians in the IT industry.",
       bgColor: "bg-[#D9AD77]/50",
-      image: `bosnians_who_design_${device}_${colorMode}.png`,
+      picture: [
+        {
+          srcSet: `bosnians_who_design_macbook_${colorMode}.png`,
+          media: "(min-width: 1024px)",
+        },
+      ],
+      image: `bosnians_who_design_iphone_${colorMode}.png`,
     },
   ];
   return (
@@ -119,11 +130,20 @@ function Home() {
               >
                 <h1 className="text-lg font-semibold">{item.title}</h1>
                 <p className="text-sm mb-4 opacity-80">{item.description}</p>
-                <img
-                  src={item.image}
-                  alt=""
-                  className="rounded-lg object-cover mt-auto"
-                />
+                <picture className="rounded-lg object-cover mt-auto">
+                  {item.picture.map((picture) => (
+                    <source
+                      key={picture.srcSet}
+                      srcSet={picture.srcSet}
+                      media={picture.media}
+                    />
+                  ))}
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="rounded-lg object-cover mt-auto"
+                  />
+                </picture>
               </div>
             </a>
           ))}
