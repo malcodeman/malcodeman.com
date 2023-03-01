@@ -9,14 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.6.10",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
     "@react-hookz/web": "^12.0.0",
     "fathom-client": "^3.2.0",
-    "framer-motion": "^4",
-    "graphql": "15",
-    "graphql-request": "^3.6.1",
     "next": "^13.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
