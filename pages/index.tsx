@@ -7,6 +7,7 @@ import {
   siDribbble,
   siStackoverflow,
 } from "simple-icons/icons";
+import { FiExternalLink } from "react-icons/fi";
 
 import SimpleIcon from "../components/SimpleIcon";
 
@@ -82,7 +83,7 @@ function Home() {
         </header>
         <div className="container mx-auto p-4 grid gap-4 sm:grid-cols-[2fr_1fr] mb-4">
           <div className="bg-[#A7D5F2]/50 rounded-lg p-8 flex flex-col justify-between">
-            <div className="dark:text-[#202126]">
+            <div className="text-[#202126]">
               <h1 className="text-4xl mb-4">
                 Hello, I’m Amer Karamustafić. 👋
               </h1>
@@ -126,8 +127,11 @@ function Home() {
           {PROJECTS.map((item) => (
             <a key={item.url} href={item.url} target="_blank" rel="noreferrer">
               <div
-                className={`flex flex-col p-8 rounded-lg h-full dark:text-white ${item.bgColor}`}
+                className={`flex flex-col p-8 rounded-lg h-full dark:text-white relative ${item.bgColor}`}
               >
+                <div className="p-2 flex rounded-full absolute top-4 right-4 text-[#202126] bg-[#A7D5F2]">
+                  <FiExternalLink />
+                </div>
                 <h1 className="text-lg font-semibold">{item.title}</h1>
                 <p className="text-sm mb-4 opacity-80">{item.description}</p>
                 <picture className="rounded-lg object-cover mt-auto">
