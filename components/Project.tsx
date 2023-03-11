@@ -1,46 +1,42 @@
-import { Box, Heading, Link, Text } from "@chakra-ui/layout";
-import { useColorModeValue } from "@chakra-ui/color-mode";
-import { motion } from "framer-motion";
-import { useMediaQuery } from "@react-hookz/web";
+import { FiExternalLink } from "react-icons/fi";
 
 type props = {
   url: string;
-  language: string;
-  name: string;
+  bgColor: string;
+  title: string;
   description?: string;
+  picture: {
+    srcSet: string;
+    media: string;
+  }[];
+  image: string;
 };
 
 function Project(props: props) {
-  const { url, language, name, description, ...rest } = props;
-  const bg = useColorModeValue(
-    "var(--chakra-colors-gray-100)",
-    "var(--chakra-colors-whiteAlpha-200)"
-  );
-  const isLargeDevice = useMediaQuery("only screen and (min-width: 80em)");
-  const boxProps = isLargeDevice ? { whileHover: { scale: 1.1 } } : {};
+  const { url, bgColor, title, description, picture, image, ...rest } = props;
+
   return (
-    <Link
-      {...rest}
-      href={url}
-      isExternal
-      _hover={{
-        textDecoration: "none",
-      }}
-    >
-      <Box
-        {...boxProps}
-        as={motion.div}
-        whileTap={{ scale: 0.9 }}
-        bg={bg}
-        padding="4"
-        borderRadius="md"
-        height="100%"
+    <a {...rest} href={url} target="_blank" rel="noreferrer">
+      <div
+        className={`flex flex-col p-8 rounded-lg h-full dark:text-white relative ${bgColor}`}
       >
-        <Text textTransform="uppercase">{language}</Text>
-        <Heading>{name}</Heading>
-        {description ? <Text opacity="0.8">{description}</Text> : null}
-      </Box>
-    </Link>
+        <div className="p-2 flex rounded-full absolute top-4 right-4 text-[#202126] bg-[#A7D5F2]">
+          <FiExternalLink />
+        </div>
+        <h1 className="text-lg font-semibold">{title}</h1>
+        <p className="text-sm mb-4 opacity-80">{description}</p>
+        <picture className="rounded-lg object-cover mt-auto">
+          {picture.map((picture) => (
+            <source
+              key={picture.srcSet}
+              srcSet={picture.srcSet}
+              media={picture.media}
+            />
+          ))}
+          <img src={image} alt="" className="rounded-lg object-cover mt-auto" />
+        </picture>
+      </div>
+    </a>
   );
 }
 

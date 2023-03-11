@@ -1,9 +1,9 @@
 import { useMediaQuery } from "@react-hookz/web";
 import Head from "next/head";
 import Link from "next/link";
-import { FiExternalLink } from "react-icons/fi";
 
 import ContactMe from "../components/ContactMe";
+import Project from "../components/Project";
 
 function Home() {
   const colorMode = useMediaQuery("(prefers-color-scheme: dark)")
@@ -83,31 +83,15 @@ function Home() {
           className="container mx-auto p-4 grid gap-4 sm:grid-cols-[1fr_1fr]"
         >
           {PROJECTS.map((item) => (
-            <a key={item.url} href={item.url} target="_blank" rel="noreferrer">
-              <div
-                className={`flex flex-col p-8 rounded-lg h-full dark:text-white relative ${item.bgColor}`}
-              >
-                <div className="p-2 flex rounded-full absolute top-4 right-4 text-[#202126] bg-[#A7D5F2]">
-                  <FiExternalLink />
-                </div>
-                <h1 className="text-lg font-semibold">{item.title}</h1>
-                <p className="text-sm mb-4 opacity-80">{item.description}</p>
-                <picture className="rounded-lg object-cover mt-auto">
-                  {item.picture.map((picture) => (
-                    <source
-                      key={picture.srcSet}
-                      srcSet={picture.srcSet}
-                      media={picture.media}
-                    />
-                  ))}
-                  <img
-                    src={item.image}
-                    alt=""
-                    className="rounded-lg object-cover mt-auto"
-                  />
-                </picture>
-              </div>
-            </a>
+            <Project
+              key={item.url}
+              url={item.url}
+              bgColor={item.bgColor}
+              title={item.title}
+              description={item.description}
+              picture={item.picture}
+              image={item.image}
+            />
           ))}
         </div>
         <div id="contact" className="container mx-auto p-4">
