@@ -1,34 +1,9 @@
 import { useMediaQuery } from "@react-hookz/web";
 import Head from "next/head";
 import Link from "next/link";
-import {
-  siGithub,
-  siDevdotto,
-  siDribbble,
-  siStackoverflow,
-} from "simple-icons/icons";
 import { FiExternalLink } from "react-icons/fi";
 
-import SimpleIcon from "../components/SimpleIcon";
-
-const LINKS = [
-  {
-    url: "https://github.com/malcodeman",
-    icon: <SimpleIcon size={16} path={siGithub.path} />,
-  },
-  {
-    url: "https://dev.to/malcodeman",
-    icon: <SimpleIcon size={16} path={siDevdotto.path} />,
-  },
-  {
-    url: "https://dribbble.com/malcodeman",
-    icon: <SimpleIcon size={16} path={siDribbble.path} />,
-  },
-  {
-    url: "https://stackoverflow.com/users/14981767/malcodeman",
-    icon: <SimpleIcon size={16} path={siStackoverflow.path} />,
-  },
-];
+import ContactMe from "../components/ContactMe";
 
 function Home() {
   const colorMode = useMediaQuery("(prefers-color-scheme: dark)")
@@ -83,7 +58,7 @@ function Home() {
         </header>
         <div className="container mx-auto p-4 grid gap-4 sm:grid-cols-[2fr_1fr] mb-4">
           <div className="bg-[#A7D5F2]/50 rounded-lg p-8 flex flex-col justify-between">
-            <div className="text-[#202126]">
+            <div className="mb-4 text-[#202126]">
               <h1 className="text-4xl mb-4">
                 Hello, I’m Amer Karamustafić. 👋
               </h1>
@@ -91,31 +66,11 @@ function Home() {
                 I’m a full-stack engineer working at fintech startup called
                 Nuri. Currently living in Berlin 🐻.
               </p>
-              <p className="mb-4">
+              <p>
                 I like running 🏃‍♂️, hiking ⛰️ and writing code in dark theme.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row">
-              <a href="mailto:malcodeman@gmail.com">
-                <button className="px-4 py-2 mb-4 sm:mb-0 sm:mr-4 w-full sm:w-auto font-semibold text-sm rounded-full bg-[#F28444] text-white">
-                  Contact me
-                </button>
-              </a>
-              <div className="flex justify-between sm:space-x-4">
-                {LINKS.map((item) => (
-                  <a
-                    key={item.url}
-                    href={item.url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="w-[36px] h-[36px] rounded-full flex items-center justify-center bg-white dark:bg-[#202126]">
-                      {item.icon}
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
+            <ContactMe />
           </div>
           <img
             src="amer.jpg"
@@ -123,7 +78,10 @@ function Home() {
             className="rounded-lg h-full object-cover"
           />
         </div>
-        <div className="container mx-auto p-4 grid gap-4 sm:grid-cols-[1fr_1fr]">
+        <div
+          id="projects"
+          className="container mx-auto p-4 grid gap-4 sm:grid-cols-[1fr_1fr]"
+        >
           {PROJECTS.map((item) => (
             <a key={item.url} href={item.url} target="_blank" rel="noreferrer">
               <div
@@ -151,6 +109,18 @@ function Home() {
               </div>
             </a>
           ))}
+        </div>
+        <div id="contact" className="container mx-auto p-4">
+          <div className="rounded-lg p-8 bg-[#A7D5F2]/50">
+            <div className="mb-4 text-[#202126]">
+              <h1 className="text-4xl mb-4">Get in touch 🤙</h1>
+              <p>
+                Feel free to reach out for collaborations or just a friendly
+                hello.
+              </p>
+            </div>
+            <ContactMe />
+          </div>
         </div>
       </div>
     </>
