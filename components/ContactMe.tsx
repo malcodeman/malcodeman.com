@@ -34,7 +34,7 @@ function ContactMe() {
   return (
     <div className="flex flex-col sm:flex-row">
       <a href="mailto:malcodeman@gmail.com">
-        <button className="px-4 py-2 mb-4 sm:mb-0 sm:mr-4 w-full sm:w-auto font-semibold text-sm rounded-full bg-[#F28444] text-white">
+        <button className="px-4 py-2 mb-4 sm:mb-0 sm:mr-4 w-full sm:w-auto font-semibold text-sm rounded-full bg-[#F28444] text-[#202126]">
           Contact me
         </button>
       </a>
