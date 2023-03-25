@@ -6,7 +6,6 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <link rel="manifest" href="/manifest.json" />
           <meta charSet="utf-8" />
           <meta name="og:description" content="malcodeman.com" />
           <meta name="description" content="malcodeman.com" />
