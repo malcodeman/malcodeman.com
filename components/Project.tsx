@@ -48,6 +48,8 @@ function Project(props: props) {
             className="rounded-lg object-cover mt-auto"
             height={image.height}
             width={image.width}
+            loading="eager"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 768px, 1024px"
           />
         </picture>
       </div>

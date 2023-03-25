@@ -92,6 +92,7 @@ function Home() {
             width="1080"
             height="1080"
             loading="eager"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 768px, 1024px"
           />
         </div>
         <div
