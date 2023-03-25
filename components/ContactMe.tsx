@@ -9,18 +9,22 @@ import SimpleIcon from "./SimpleIcon";
 
 const LINKS = [
   {
+    label: "Github",
     url: "https://github.com/malcodeman",
     icon: <SimpleIcon size={16} path={siGithub.path} />,
   },
   {
+    label: "Dev.to",
     url: "https://dev.to/malcodeman",
     icon: <SimpleIcon size={16} path={siDevdotto.path} />,
   },
   {
+    label: "Dribbble",
     url: "https://dribbble.com/malcodeman",
     icon: <SimpleIcon size={16} path={siDribbble.path} />,
   },
   {
+    label: "Stackoverflow",
     url: "https://stackoverflow.com/users/14981767/malcodeman",
     icon: <SimpleIcon size={16} path={siStackoverflow.path} />,
   },
@@ -36,7 +40,13 @@ function ContactMe() {
       </a>
       <div className="flex justify-between sm:space-x-4">
         {LINKS.map((item) => (
-          <a key={item.url} href={item.url} target="_blank" rel="noreferrer">
+          <a
+            key={item.url}
+            href={item.url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={item.label}
+          >
             <div className="w-[36px] h-[36px] rounded-full flex items-center justify-center bg-white dark:bg-[#202126]">
               {item.icon}
             </div>
