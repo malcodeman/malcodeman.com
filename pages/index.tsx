@@ -91,6 +91,7 @@ function Home() {
             className="rounded-lg h-full object-cover"
             width="1080"
             height="1080"
+            loading="eager"
           />
         </div>
         <div
