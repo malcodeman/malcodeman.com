@@ -2,6 +2,7 @@ import { useMediaQuery } from "@react-hookz/web";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { GiAstronautHelmet } from "react-icons/gi";
 
 import ContactMe from "../components/ContactMe";
 import Project from "../components/Project";
@@ -60,7 +61,7 @@ function Home() {
       <div>
         <header className="container mx-auto p-4 flex justify-between">
           <Link href="/" className="hidden sm:flex items-center" passHref>
-            <div className="bg-[#F28444] h-4 w-4 rounded-full mr-1" />
+            <GiAstronautHelmet size="16" color="#F28444" className="mr-1" />
             malcodeman
           </Link>
           <nav className="space-x-4">
