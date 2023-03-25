@@ -19,14 +19,14 @@ function Home() {
       bgColor: "bg-[#818C30]/50",
       picture: [
         {
-          srcSet: `/resume_builder_dev_macbook_${colorMode}.png`,
+          srcSet: `/resume_builder_dev_macbook_${colorMode}.webp`,
           media: "(min-width: 1024px)",
           height: 2520,
           width: 4072,
         },
       ],
       image: {
-        src: `/resume_builder_dev_iphone_${colorMode}.png`,
+        src: `/resume_builder_dev_iphone_${colorMode}.webp`,
         height: 2028,
         width: 1059,
       },
@@ -39,14 +39,14 @@ function Home() {
       bgColor: "bg-[#D9AD77]/50",
       picture: [
         {
-          srcSet: `/bosnians_who_design_macbook_${colorMode}.png`,
+          srcSet: `/bosnians_who_design_macbook_${colorMode}.webp`,
           media: "(min-width: 1024px)",
           height: 2520,
           width: 4072,
         },
       ],
       image: {
-        src: `/bosnians_who_design_iphone_${colorMode}.png`,
+        src: `/bosnians_who_design_iphone_${colorMode}.webp`,
         height: 2028,
         width: 1059,
       },
@@ -86,7 +86,7 @@ function Home() {
             <ContactMe />
           </div>
           <Image
-            src="/amer.jpg"
+            src="/amer.webp"
             alt=""
             className="rounded-lg h-full object-cover"
             width="1080"
