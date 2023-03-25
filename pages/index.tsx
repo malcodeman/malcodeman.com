@@ -1,5 +1,6 @@
 import { useMediaQuery } from "@react-hookz/web";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 
 import ContactMe from "../components/ContactMe";
@@ -18,11 +19,17 @@ function Home() {
       bgColor: "bg-[#818C30]/50",
       picture: [
         {
-          srcSet: `resume_builder_dev_macbook_${colorMode}.png`,
+          srcSet: `/resume_builder_dev_macbook_${colorMode}.png`,
           media: "(min-width: 1024px)",
+          height: 2520,
+          width: 4072,
         },
       ],
-      image: `resume_builder_dev_iphone_${colorMode}.png`,
+      image: {
+        src: `/resume_builder_dev_iphone_${colorMode}.png`,
+        height: 2028,
+        width: 1059,
+      },
     },
     {
       url: "https://www.bosnianswho.design",
@@ -32,11 +39,17 @@ function Home() {
       bgColor: "bg-[#D9AD77]/50",
       picture: [
         {
-          srcSet: `bosnians_who_design_macbook_${colorMode}.png`,
+          srcSet: `/bosnians_who_design_macbook_${colorMode}.png`,
           media: "(min-width: 1024px)",
+          height: 2520,
+          width: 4072,
         },
       ],
-      image: `bosnians_who_design_iphone_${colorMode}.png`,
+      image: {
+        src: `/bosnians_who_design_iphone_${colorMode}.png`,
+        height: 2028,
+        width: 1059,
+      },
     },
   ];
   return (
@@ -72,10 +85,12 @@ function Home() {
             </div>
             <ContactMe />
           </div>
-          <img
-            src="amer.jpg"
+          <Image
+            src="/amer.jpg"
             alt=""
             className="rounded-lg h-full object-cover"
+            width="1080"
+            height="1080"
           />
         </div>
         <div

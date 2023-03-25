@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 
 type props = {
@@ -8,8 +9,14 @@ type props = {
   picture: {
     srcSet: string;
     media: string;
+    height: number;
+    width: number;
   }[];
-  image: string;
+  image: {
+    src: string;
+    height: number;
+    width: number;
+  };
 };
 
 function Project(props: props) {
@@ -31,9 +38,17 @@ function Project(props: props) {
               key={picture.srcSet}
               srcSet={picture.srcSet}
               media={picture.media}
+              height={picture.height}
+              width={picture.width}
             />
           ))}
-          <img src={image} alt="" className="rounded-lg object-cover mt-auto" />
+          <Image
+            src={image.src}
+            alt=""
+            className="rounded-lg object-cover mt-auto"
+            height={image.height}
+            width={image.width}
+          />
         </picture>
       </div>
     </a>
