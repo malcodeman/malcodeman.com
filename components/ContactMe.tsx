@@ -3,7 +3,7 @@ import {
   siDevdotto,
   siDribbble,
   siStackoverflow,
-} from "simple-icons/icons";
+} from "simple-icons";
 
 import SimpleIcon from "./SimpleIcon";
 
