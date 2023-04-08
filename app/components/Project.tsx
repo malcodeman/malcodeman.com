@@ -1,31 +1,15 @@
 import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 
-type props = {
-  url: string;
-  bgColor: string;
-  title: string;
-  description?: string;
-  picture: {
-    srcSet: string;
-    media: string;
-    height: number;
-    width: number;
-  }[];
-  image: {
-    src: string;
-    height: number;
-    width: number;
-  };
-};
+import { Project as ProjectType } from "../../types";
 
-function Project(props: props) {
+function Project(props: ProjectType) {
   const { url, bgColor, title, description, picture, image, ...rest } = props;
-
   return (
     <a {...rest} href={url} target="_blank" rel="noreferrer">
       <div
-        className={`flex flex-col p-8 rounded-lg h-full dark:text-white relative ${bgColor}`}
+        className="flex flex-col p-8 rounded-lg h-full dark:text-white relative"
+        style={{ backgroundColor: bgColor }}
       >
         <div className="p-2 flex rounded-full absolute top-4 right-4 text-[#202126] bg-[#A7D5F2]">
           <FiExternalLink />
@@ -48,8 +32,8 @@ function Project(props: props) {
             className="rounded-lg object-cover mt-auto"
             height={image.height}
             width={image.width}
-            loading="eager"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 768px, 1024px"
+            priority
           />
         </picture>
       </div>

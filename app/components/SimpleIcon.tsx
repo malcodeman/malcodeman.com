@@ -1,10 +1,6 @@
-type props = {
-  size?: number;
-  color?: string;
-  path: string;
-};
+import { SimpleIcon as SimpleIconType } from "../../types";
 
-function SimpleIcon(props: props) {
+function SimpleIcon(props: SimpleIconType) {
   const { size = 24, color = "currentColor", path, ...rest } = props;
   return (
     <svg
