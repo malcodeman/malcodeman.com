@@ -23,3 +23,8 @@ export type SimpleIcon = {
 };
 
 export type Variant = "dark" | "light";
+
+export type ErrorComponent = {
+  error: Error;
+  reset: () => void;
+};
