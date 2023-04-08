@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "@react-hookz/web";
 
 import Project from "./Project";
-import { getProjects } from "../../lib/getProjects";
+import { getProjects } from "../lib/getProjects";
 import { Project as ProjectType } from "../../types";
 
 function Projects() {

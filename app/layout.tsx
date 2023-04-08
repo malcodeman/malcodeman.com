@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
 import Fathom from "./components/Fathom";
-import { METADATA } from "../lib/constants";
+import { METADATA } from "./lib/constants";
 
-import "../styles/globals.css";
+import "./globals.css";
 
 export const metadata = {
   ...METADATA,

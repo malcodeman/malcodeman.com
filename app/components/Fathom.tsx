@@ -6,7 +6,7 @@ import {
   FATHOM_INCLUDED_DOMAINS,
   FATHOM_SITE_ID,
   IS_PROD,
-} from "../../lib/constants";
+} from "../lib/constants";
 
 function Fathom() {
   useEffect(() => {
