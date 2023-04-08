@@ -8,7 +8,8 @@ function Project(props: ProjectType) {
   return (
     <a {...rest} href={url} target="_blank" rel="noreferrer">
       <div
-        className={`flex flex-col p-8 rounded-lg h-full dark:text-white relative ${bgColor}`}
+        className="flex flex-col p-8 rounded-lg h-full dark:text-white relative"
+        style={{ backgroundColor: bgColor }}
       >
         <div className="p-2 flex rounded-full absolute top-4 right-4 text-[#202126] bg-[#A7D5F2]">
           <FiExternalLink />

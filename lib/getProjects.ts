@@ -7,7 +7,7 @@ export function getProjects(variant: Variant) {
       title: "resumebuilder.dev",
       description:
         "Privacy-focused and login-free resume builder for developers.",
-      bgColor: "bg-[#818C30]/50",
+      bgColor: "#818C3080",
       picture: [
         {
           srcSet: `/resume_builder_dev_macbook_${variant}.webp`,
@@ -27,7 +27,7 @@ export function getProjects(variant: Variant) {
       title: "bosnianswho.design",
       description:
         "A directory of inspiring Bosnians and Herzegovinians in the IT industry.",
-      bgColor: "bg-[#D9AD77]/50",
+      bgColor: "#D9AD7780",
       picture: [
         {
           srcSet: `/bosnians_who_design_macbook_${variant}.webp`,
