@@ -10,7 +10,7 @@ import {
 
 function Fathom() {
   useEffect(() => {
-    if (!IS_PROD) {
+    if (IS_PROD) {
       load(FATHOM_SITE_ID, {
         includedDomains: FATHOM_INCLUDED_DOMAINS,
       });
