@@ -10,7 +10,7 @@
     "serve": "serve out"
   },
   "dependencies": {
-    "@react-hookz/web": "^23.0.0",
+    "@react-hookz/web": "^23.1.0",
     "fathom-client": "^3.5.0",
     "next": "^13.4.9",
     "react": "^18.2.0",
