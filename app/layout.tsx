@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { METADATA } from "./lib/constants";
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="dark:text-[#A7D5F2] dark:bg-[#202126]">
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
