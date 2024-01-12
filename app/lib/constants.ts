@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 
-export const FATHOM_SITE_ID = "DYETUSIG";
-export const FATHOM_INCLUDED_DOMAINS = ["malcodeman.com", "www.malcodeman.com"];
 export const IS_PROD = process.env.NEXT_PUBLIC_VERCEL_ENV === "production";
 
 const TITLE = "malcodeman";
