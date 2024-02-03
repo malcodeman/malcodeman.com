@@ -24,8 +24,8 @@ function Home() {
           <div className="mb-4 text-[#202126]">
             <h1 className="text-4xl mb-4">Hello, I’m Amer Karamustafić. 👋</h1>
             <p>
-              I’m a full-stack engineer working at fintech startup called Nuri.
-              Currently living in Berlin 🐻.
+              I’m a full-stack engineer specializing in startups, open source
+              and web3. Currently living in Berlin 🐻.
             </p>
             <p>I like running 🏃‍♂️, hiking ⛰️ and writing code in dark theme.</p>
           </div>
