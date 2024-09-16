@@ -22,5 +22,24 @@ export function getProjects(variant: Variant) {
         width: 1059,
       },
     },
+    {
+      url: "https://www.lurkstation.com",
+      title: "lurkstation.com",
+      description: "Content oriented reddit client.",
+      bgColor: "#D9AD7780",
+      picture: [
+        {
+          srcSet: `/lurkstation_com_macbook_${variant}.webp`,
+          media: "(min-width: 1024px)",
+          height: 2520,
+          width: 4072,
+        },
+      ],
+      image: {
+        src: `/lurkstation_com_iphone_${variant}.webp`,
+        height: 2028,
+        width: 1059,
+      },
+    },
   ];
 }
