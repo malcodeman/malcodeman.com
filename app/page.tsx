@@ -19,9 +19,9 @@ function Home() {
           <Link href="/#contact">Contact</Link>
         </nav>
       </header>
-      <div className="container mx-auto p-4 grid gap-4 sm:grid-cols-[2fr_1fr] mb-4">
+      <div className="container mx-auto p-4 grid gap-4 sm:grid-cols-[2fr_1fr]">
         <div className="bg-[#A7D5F2]/50 rounded-lg p-8 flex flex-col justify-between">
-          <div className="mb-4 text-[#202126]">
+          <div className="mb-6 text-[#202126]">
             <h1 className="text-4xl mb-4">Hello, I’m Amer Karamustafić. 👋</h1>
             <p>
               I’m a full-stack engineer specializing in startups, open source
@@ -44,7 +44,7 @@ function Home() {
       <Projects />
       <div id="contact" className="container mx-auto p-4">
         <div className="rounded-lg p-8 bg-[#A7D5F2]/50">
-          <div className="mb-4 text-[#202126]">
+          <div className="mb-6 text-[#202126]">
             <h1 className="text-4xl mb-4">Get in touch 🤙</h1>
             <p>
               Feel free to reach out for collaborations or just a friendly
