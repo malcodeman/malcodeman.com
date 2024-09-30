@@ -13,7 +13,7 @@ function Home() {
           <GiAstronautHelmet size="16" className="mr-1 dark:text-[#F28444]" />
           malcodeman
         </Link>
-        <nav className="space-x-4">
+        <nav className="space-x-6">
           <Link href="/">Home</Link>
           <Link href="/#projects">Projects</Link>
           <Link href="/#contact">Contact</Link>
