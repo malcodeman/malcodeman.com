@@ -34,7 +34,7 @@ function ContactMe() {
   return (
     <div className="flex flex-col sm:flex-row">
       <a href="mailto:malcodeman@gmail.com">
-        <button className="px-4 py-2 mb-4 sm:mb-0 sm:mr-4 w-full sm:w-auto font-semibold text-sm rounded-full bg-[#F28444] text-[#202126]">
+        <button className="h-10 px-4 py-2 mb-4 sm:mb-0 sm:mr-4 w-full sm:w-auto font-semibold text-sm rounded-full bg-[#F28444] text-[#202126]">
           Contact me
         </button>
       </a>
@@ -47,7 +47,7 @@ function ContactMe() {
             rel="noreferrer"
             aria-label={item.label}
           >
-            <div className="w-[36px] h-[36px] rounded-full flex items-center justify-center bg-white dark:bg-[#202126]">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white dark:bg-[#202126]">
               {item.icon}
             </div>
           </a>
