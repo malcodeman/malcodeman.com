@@ -19,7 +19,7 @@ function Projects() {
   return (
     <div
       id="projects"
-      className="container mx-auto p-4 grid gap-4 sm:grid-cols-[1fr_1fr]"
+      className="container mx-auto grid gap-4 p-4 sm:grid-cols-[1fr_1fr]"
     >
       {projects.map((item) => (
         <Project

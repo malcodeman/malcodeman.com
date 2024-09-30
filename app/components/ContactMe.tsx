@@ -32,9 +32,9 @@ const LINKS = [
 
 function ContactMe() {
   return (
-    <div className="flex flex-col sm:items-center sm:flex-row">
+    <div className="flex flex-col sm:flex-row sm:items-center">
       <a href="mailto:malcodeman@gmail.com">
-        <button className="px-4 py-2 mb-6 sm:mb-0 sm:mr-6 w-full sm:w-auto font-semibold text-sm rounded-full bg-[#F28444] text-[#202126]">
+        <button className="mb-6 w-full rounded-full bg-[#F28444] px-4 py-2 text-sm font-semibold text-[#202126] sm:mb-0 sm:mr-6 sm:w-auto">
           Contact me
         </button>
       </a>
@@ -47,7 +47,7 @@ function ContactMe() {
             rel="noreferrer"
             aria-label={item.label}
           >
-            <div className="w-9 h-9 rounded-full flex items-center justify-center bg-white dark:bg-[#202126]">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white dark:bg-[#202126]">
               {item.icon}
             </div>
           </a>

@@ -8,15 +8,15 @@ function Project(props: ProjectType) {
   return (
     <a {...rest} href={url} target="_blank" rel="noreferrer">
       <div
-        className="flex flex-col p-8 rounded-lg h-full dark:text-white relative"
+        className="relative flex h-full flex-col rounded-lg p-8 dark:text-white"
         style={{ backgroundColor: bgColor }}
       >
-        <div className="p-2 flex rounded-full absolute top-4 right-4 text-[#202126] bg-[#A7D5F2]">
+        <div className="absolute right-4 top-4 flex rounded-full bg-[#A7D5F2] p-2 text-[#202126]">
           <FiExternalLink />
         </div>
         <h1 className="text-lg font-semibold">{title}</h1>
-        <p className="text-sm mb-4 opacity-80">{description}</p>
-        <picture className="rounded-lg object-cover mt-auto">
+        <p className="mb-4 text-sm opacity-80">{description}</p>
+        <picture className="mt-auto rounded-lg object-cover">
           {picture.map((picture) => (
             <source
               key={picture.srcSet}
@@ -29,7 +29,7 @@ function Project(props: ProjectType) {
           <Image
             src={image.src}
             alt=""
-            className="rounded-lg object-cover mt-auto"
+            className="mt-auto rounded-lg object-cover"
             height={image.height}
             width={image.width}
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 768px, 1024px"

@@ -8,8 +8,8 @@ import Projects from "./components/Projects";
 function Home() {
   return (
     <div>
-      <header className="container mx-auto p-4 flex justify-between">
-        <Link href="/" className="hidden sm:flex items-center">
+      <header className="container mx-auto flex justify-between p-4">
+        <Link href="/" className="hidden items-center sm:flex">
           <GiAstronautHelmet size="16" className="mr-1 dark:text-[#F28444]" />
           malcodeman
         </Link>
@@ -19,10 +19,10 @@ function Home() {
           <Link href="/#contact">Contact</Link>
         </nav>
       </header>
-      <div className="container mx-auto p-4 grid gap-4 sm:grid-cols-[2fr_1fr]">
-        <div className="bg-[#A7D5F2]/50 rounded-lg p-8 flex flex-col justify-between">
+      <div className="container mx-auto grid gap-4 p-4 sm:grid-cols-[2fr_1fr]">
+        <div className="flex flex-col justify-between rounded-lg bg-[#A7D5F2]/50 p-8">
           <div className="mb-6 text-[#202126]">
-            <h1 className="text-4xl mb-4">Hello, I’m Amer Karamustafić. 👋</h1>
+            <h1 className="mb-4 text-4xl">Hello, I’m Amer Karamustafić. 👋</h1>
             <p>
               I’m a full-stack engineer specializing in startups, open source
               and web3. Currently living in Berlin 🐻.
@@ -34,7 +34,7 @@ function Home() {
         <Image
           src="/amer.webp"
           alt=""
-          className="rounded-lg h-full object-cover"
+          className="h-full rounded-lg object-cover"
           width="1080"
           height="1080"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 768px, 1024px"
@@ -43,9 +43,9 @@ function Home() {
       </div>
       <Projects />
       <div id="contact" className="container mx-auto p-4">
-        <div className="rounded-lg p-8 bg-[#A7D5F2]/50">
+        <div className="rounded-lg bg-[#A7D5F2]/50 p-8">
           <div className="mb-6 text-[#202126]">
-            <h1 className="text-4xl mb-4">Get in touch 🤙</h1>
+            <h1 className="mb-4 text-4xl">Get in touch 🤙</h1>
             <p>
               Feel free to reach out for collaborations or just a friendly
               hello.
