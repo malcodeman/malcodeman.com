@@ -8,7 +8,7 @@ import { Project as ProjectType } from "../../types";
 
 function Projects() {
   const colorMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const [projects, setProjects] = useState<ProjectType[]>([]);
+  const [projects, setProjects] = useState<ProjectType[]>(getProjects("light"));
 
   useEffect(() => {
     if (colorMode !== undefined) {
