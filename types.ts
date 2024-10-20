@@ -1,6 +1,5 @@
 export type Project = {
   url: string;
-  bgColor: string;
   title: string;
   description?: string;
   picture: {
