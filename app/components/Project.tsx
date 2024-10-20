@@ -11,7 +11,7 @@ function Project(props: ProjectType) {
   const { url, title, description, picture, image, ...rest } = props;
   return (
     <a {...rest} href={url} target="_blank" rel="noreferrer">
-      <GridItem className="relative flex h-full flex-col">
+      <GridItem className="relative flex h-full flex-col bg-[#F9F9F8] dark:bg-[#222221]">
         <IconButton className="absolute right-4 top-4 rounded-[20px] border border-[#E9E8E6] dark:border-[#2A2A28]">
           <FiExternalLink />
         </IconButton>

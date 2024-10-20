@@ -1,6 +1,7 @@
 import { siGithub, siDevdotto, siDribbble } from "simple-icons";
 import { Button } from "@/ui/Button";
 import { IconButton } from "@/ui/IconButton";
+import { cn } from "@/lib/utils";
 import SimpleIcon from "./SimpleIcon";
 
 const LINKS = [
@@ -38,7 +39,14 @@ function ContactMe() {
             rel="noreferrer"
             aria-label={item.label}
           >
-            <IconButton>{item.icon}</IconButton>
+            <IconButton
+              className={cn({
+                "text-[#EA4C89] dark:text-[#EA4C89]":
+                  item.url === "https://dribbble.com/malcodeman",
+              })}
+            >
+              {item.icon}
+            </IconButton>
           </a>
         ))}
       </div>
