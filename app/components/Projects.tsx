@@ -25,7 +25,6 @@ function Projects() {
         <Project
           key={item.url}
           url={item.url}
-          bgColor={item.bgColor}
           title={item.title}
           description={item.description}
           picture={item.picture}
