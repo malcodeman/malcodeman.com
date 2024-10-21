@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { FiExternalLink } from "react-icons/fi";
-
+import { ExternalLinkIcon } from "lucide-react";
 import { Project as ProjectType } from "../../types";
 import { GridItem } from "./GridItem";
 import { Heading } from "@/ui/Heading";
@@ -16,7 +15,7 @@ function Project(props: ProjectType) {
           aria-label="External link"
           className="absolute right-4 top-4 rounded-[20px] border border-[#E9E8E6] dark:border-[#2A2A28]"
         >
-          <FiExternalLink />
+          <ExternalLinkIcon size={16} />
         </IconButton>
         <Heading level={2} className="text-2xl">
           {title}
