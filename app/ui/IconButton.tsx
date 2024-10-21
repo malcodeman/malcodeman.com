@@ -1,16 +1,22 @@
 import { cn } from "@/lib/utils";
 
-type Props = React.ComponentPropsWithoutRef<"button">;
+type Props = {
+  variant?: "solid" | "ghost";
+} & React.ComponentPropsWithoutRef<"button">;
 
 export function IconButton(props: Props) {
-  const { className } = props;
+  const { className, variant = "solid" } = props;
 
   return (
     <button
       {...props}
       className={cn(
-        "flex h-9 w-9 items-center justify-center rounded-[4px] bg-[#EFEEEC] text-[#21201C] dark:bg-[#232322] dark:text-[#EEEEEC]",
+        "flex h-9 w-9 items-center justify-center rounded-[4px] text-[#21201C] transition-colors dark:text-[#EEEEEC]",
         className,
+        {
+          "bg-[#EFEEEC] dark:bg-[#232322]": variant === "solid",
+          "hover:bg-[#EFEEEC] dark:hover:bg-[#232322]": variant === "ghost",
+        },
       )}
     />
   );
