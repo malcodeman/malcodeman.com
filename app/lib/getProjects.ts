@@ -7,7 +7,6 @@ export function getProjects(variant: Variant) {
       title: "resumebuilder.dev",
       description:
         "Privacy-focused and login-free resume builder for developers.",
-      bgColor: "#818C3080",
       picture: [
         {
           srcSet: `/resume_builder_dev_macbook_${variant}.webp`,
@@ -26,7 +25,6 @@ export function getProjects(variant: Variant) {
       url: "https://www.lurkstation.com",
       title: "lurkstation.com",
       description: "Content oriented reddit client.",
-      bgColor: "#D9AD7780",
       picture: [
         {
           srcSet: `/lurkstation_com_macbook_${variant}.webp`,
