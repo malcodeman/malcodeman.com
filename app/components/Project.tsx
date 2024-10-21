@@ -12,7 +12,10 @@ function Project(props: ProjectType) {
   return (
     <a {...rest} href={url} target="_blank" rel="noreferrer">
       <GridItem className="relative flex h-full flex-col bg-[#F9F9F8] dark:bg-[#222221]">
-        <IconButton className="absolute right-4 top-4 rounded-[20px] border border-[#E9E8E6] dark:border-[#2A2A28]">
+        <IconButton
+          aria-label="External link"
+          className="absolute right-4 top-4 rounded-[20px] border border-[#E9E8E6] dark:border-[#2A2A28]"
+        >
           <FiExternalLink />
         </IconButton>
         <Heading level={2} className="text-2xl">

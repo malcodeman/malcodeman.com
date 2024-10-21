@@ -32,14 +32,9 @@ function ContactMe() {
       </a>
       <div className="flex justify-between sm:space-x-6">
         {LINKS.map((item) => (
-          <a
-            key={item.url}
-            href={item.url}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={item.label}
-          >
+          <a key={item.url} href={item.url} target="_blank">
             <IconButton
+              aria-label={item.label}
               className={cn({
                 "text-[#EA4C89] dark:text-[#EA4C89]":
                   item.url === "https://dribbble.com/malcodeman",
