@@ -1,28 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
-import { GiAstronautHelmet } from "react-icons/gi";
-
-import ContactMe from "./components/ContactMe";
-import Projects from "./components/Projects";
 import { Text } from "@/ui/Text";
 import { Heading } from "@/ui/Heading";
+import ContactMe from "./components/ContactMe";
+import Projects from "./components/Projects";
 import { GridItem } from "./components/GridItem";
+import { Header } from "./components/Header";
 
 function Home() {
   return (
     <div>
-      <header className="container mx-auto flex justify-between p-4">
-        <Link href="/" className="hidden items-center sm:flex">
-          <GiAstronautHelmet size="16" className="mr-1 text-[#EB5E41]" />
-          malcodeman
-        </Link>
-        <nav className="space-x-6">
-          <Link href="/">Home</Link>
-          <Link href="/#projects">Projects</Link>
-          <Link href="/#contact">Contact</Link>
-        </nav>
-      </header>
-      <div className="container mx-auto grid gap-4 p-4 sm:grid-cols-[2fr_1fr]">
+      <Header />
+      <div className="container mx-auto mb-5 grid gap-5 px-5 sm:grid-cols-[2fr_1fr]">
         <GridItem className="flex flex-col justify-between">
           <div className="mb-6">
             <Heading className="mb-4">Hello, I’m Amer Karamustafić. 👋</Heading>
@@ -47,7 +35,7 @@ function Home() {
         />
       </div>
       <Projects />
-      <div id="contact" className="container mx-auto p-4">
+      <div id="contact" className="container mx-auto px-5 pb-5">
         <GridItem>
           <div className="mb-6">
             <Heading className="mb-4">Get in touch 🤙</Heading>
