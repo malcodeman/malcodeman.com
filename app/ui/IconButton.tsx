@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 
 type Props = {
   variant?: "solid" | "ghost";
+  "aria-label": string;
 } & React.ComponentPropsWithoutRef<"button">;
 
 export function IconButton(props: Props) {

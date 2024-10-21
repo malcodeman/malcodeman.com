@@ -49,12 +49,8 @@ export function Header() {
           </Link>
         </nav>
         <div className="h-6 w-[1px] bg-[#E9E8E6] dark:bg-[#2A2A28]" />
-        <a
-          href="https://github.com/malcodeman/malcodeman.com"
-          target="_blank"
-          aria-label="GitHub repository"
-        >
-          <IconButton variant="ghost">
+        <a href="https://github.com/malcodeman/malcodeman.com" target="_blank">
+          <IconButton variant="ghost" aria-label="GitHub repository">
             <SimpleIcon size={16} path={siGithub.path} />
           </IconButton>
         </a>
