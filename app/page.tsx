@@ -32,7 +32,7 @@ function Home() {
         <img
           src="/amer.webp"
           alt=""
-          className="h-full rounded-[20px] object-cover"
+          className="aspect-square h-full rounded-[20px] object-cover"
         />
       </div>
       <Projects />
