@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Text } from "@/ui/Text";
 import { Heading } from "@/ui/Heading";
 import { Highlight } from "@/ui/Highlight";
@@ -30,14 +29,10 @@ function Home() {
           </div>
           <ContactMe />
         </GridItem>
-        <Image
+        <img
           src="/amer.webp"
           alt=""
           className="h-full rounded-[20px] object-cover"
-          width="1080"
-          height="1080"
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 768px, 1024px"
-          priority
         />
       </div>
       <Projects />
