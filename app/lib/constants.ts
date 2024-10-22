@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const IS_PROD = process.env.NEXT_PUBLIC_VERCEL_ENV === "production";
 
-const TITLE = "malcodeman";
+const TITLE = "malcodeman | Product engineer";
 const DESCRIPTION =
   "I design slick interfaces that make finance and crypto look easy.";
 
@@ -11,8 +11,8 @@ export const METADATA: Metadata = {
   description: DESCRIPTION,
   icons: {
     icon: [
-      { url: "/favicon_light.ico", media: "(prefers-color-scheme: light)" },
-      { url: "/favicon_dark.ico", media: "(prefers-color-scheme: dark)" },
+      { url: "/favicon.ico", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon.ico", media: "(prefers-color-scheme: dark)" },
     ],
   },
   openGraph: {
