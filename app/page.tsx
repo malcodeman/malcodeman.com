@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Text } from "@/ui/Text";
 import { Heading } from "@/ui/Heading";
+import { Highlight } from "@/ui/Highlight";
 import ContactMe from "./components/ContactMe";
 import Projects from "./components/Projects";
 import { GridItem } from "./components/GridItem";
@@ -13,13 +14,18 @@ function Home() {
       <div className="container mx-auto mb-5 grid gap-5 px-5 sm:grid-cols-[2fr_1fr]">
         <GridItem className="flex flex-col justify-between">
           <div className="mb-6">
-            <Heading className="mb-4">Hello, I’m Amer Karamustafić. 👋</Heading>
+            <Heading className="mb-4">
+              Hello, I&apos;m Amer Karamustafić. 👋
+            </Heading>
             <Text>
-              I’m a full-stack engineer specializing in startups, open source
-              and web3. Currently living in Berlin 🐻.
+              <Highlight
+                query={["product engineer"]}
+                text="I'm a product engineer specializing in startups, open source
+              and web3. Currently living in Berlin 🐻."
+              />
             </Text>
             <Text>
-              I like running 🏃‍♂️, hiking ⛰️ and writing code in dark theme.
+              I like running 🏃‍♂️, hiking ⛰️ and writing code in dark theme 🌙.
             </Text>
           </div>
           <ContactMe />
