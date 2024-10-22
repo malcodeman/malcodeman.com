@@ -9,7 +9,7 @@ export function Button(props: Props) {
     <button
       {...props}
       className={cn(
-        "rounded-[4px] bg-[#EB5E41] px-4 py-1.5 text-base font-semibold text-white",
+        "flex items-center justify-center gap-1 rounded-[4px] bg-[#EB5E41] px-4 py-1.5 text-base font-semibold text-white",
         className,
       )}
     />
