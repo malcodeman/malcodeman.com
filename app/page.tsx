@@ -2,9 +2,10 @@ import { Text } from "@/ui/Text";
 import { Heading } from "@/ui/Heading";
 import { Highlight } from "@/ui/Highlight";
 import ContactMe from "./components/ContactMe";
-import Projects from "./components/Projects";
 import { GridItem } from "./components/GridItem";
 import { Header } from "./components/Header";
+import { PROJECTS } from "./lib/constants";
+import Project from "./components/Project";
 
 function Home() {
   return (
@@ -35,7 +36,20 @@ function Home() {
           className="aspect-square h-full rounded-[20px] object-cover"
         />
       </div>
-      <Projects />
+      <div
+        id="projects"
+        className="container mx-auto mb-5 grid gap-5 px-5 sm:grid-cols-[1fr_1fr]"
+      >
+        {PROJECTS.map((item) => (
+          <Project
+            key={item.url}
+            url={item.url}
+            title={item.title}
+            description={item.description}
+            imageSrc={item.imageSrc}
+          />
+        ))}
+      </div>
       <div id="contact" className="container mx-auto px-5 pb-5">
         <GridItem>
           <div className="mb-6">
