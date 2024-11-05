@@ -34,6 +34,7 @@ function Home() {
           src="/amer.webp"
           alt=""
           className="aspect-square h-full rounded-[20px] object-cover"
+          loading="eager"
         />
       </div>
       <div
