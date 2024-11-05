@@ -25,7 +25,7 @@ function Project(props: ProjectType) {
             srcSet="resume_builder_desktop.webp"
             media="(min-width: 640px)"
           />
-          <img src="resume_builder_mobile.webp" />
+          <img src="resume_builder_mobile.webp" alt="" />
         </picture>
       </GridItem>
     </a>
