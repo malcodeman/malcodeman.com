@@ -27,7 +27,7 @@ function ContactMe() {
   return (
     <div className="flex flex-col sm:flex-row sm:items-center">
       <a href="mailto:malcodeman@gmail.com" className="mb-6 sm:mb-0 sm:mr-6">
-        <Button className="w-full transition-transform hover:scale-x-110 hover:scale-y-110">
+        <Button className="w-full hover:scale-x-110 hover:scale-y-110">
           <MailIcon size={16} />
           Contact me
         </Button>
