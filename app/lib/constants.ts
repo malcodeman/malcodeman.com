@@ -39,12 +39,12 @@ export const PROJECTS: Project[] = [
     title: "resumebuilder.dev",
     description:
       "Privacy-focused and login-free resume builder for developers.",
-    imageSrc: "/resume_builder_dev_macbook_dark.webp",
+    imageSrc: "/resume_builder.webp",
   },
   {
     url: "https://www.lurkstation.com",
     title: "lurkstation.com",
     description: "Content oriented reddit client.",
-    imageSrc: `/lurkstation_com_macbook_dark.webp`,
+    imageSrc: `/resume_builder.webp`,
   },
 ];

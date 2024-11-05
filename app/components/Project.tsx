@@ -20,11 +20,11 @@ function Project(props: ProjectType) {
           {title}
         </Heading>
         <Text className="mb-4">{description}</Text>
-        {/* <img
+        <img
           src={imageSrc}
           alt=""
           className="mt-auto aspect-video object-cover"
-        /> */}
+        />
       </GridItem>
     </a>
   );
