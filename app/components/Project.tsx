@@ -23,7 +23,7 @@ function Project(props: ProjectType) {
         <img
           src={imageSrc}
           alt=""
-          className="mt-auto aspect-video object-cover"
+          className="mt-auto aspect-video w-[440px] object-cover"
         />
       </GridItem>
     </a>
