@@ -21,11 +21,8 @@ function Project(props: ProjectType) {
         </Heading>
         <Text className="mb-4">{description}</Text>
         <picture className="mt-auto aspect-video object-cover">
-          <source
-            srcSet="resume_builder_desktop.webp"
-            media="(min-width: 640px)"
-          />
-          <img src="resume_builder_mobile.webp" alt="" />
+          <source srcSet={imageSrc[1]} media="(min-width: 640px)" />
+          <img src={imageSrc[0]} alt="" />
         </picture>
       </GridItem>
     </a>

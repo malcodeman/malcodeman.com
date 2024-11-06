@@ -2,7 +2,7 @@ export type Project = {
   url: string;
   title: string;
   description?: string;
-  imageSrc: string;
+  imageSrc: string[];
 };
 
 export type SimpleIcon = {
