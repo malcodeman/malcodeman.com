@@ -30,12 +30,14 @@ function Home() {
           </div>
           <ContactMe />
         </GridItem>
-        {/* <img
-          src="/amer.webp"
-          alt=""
-          className="aspect-square h-full rounded-[20px] object-cover"
-          loading="eager"
-        /> */}
+        <picture>
+          <source srcSet="/amer_desktop.webp" media="(min-width: 640px)" />
+          <img
+            src="/amer_mobile.webp"
+            alt=""
+            className="aspect-square h-full w-full rounded-[20px] object-cover"
+          />
+        </picture>
       </div>
       <div
         id="projects"
