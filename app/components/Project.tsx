@@ -22,7 +22,7 @@ function Project(props: ProjectType) {
         <Text className="mb-4">{description}</Text>
         <picture className="mt-auto aspect-video">
           <source srcSet={imageSrc[1]} media="(min-width: 640px)" />
-          <img src={imageSrc[0]} alt="" className="aspect-video" />
+          <img src={imageSrc[0]} alt="" />
         </picture>
       </GridItem>
     </a>
