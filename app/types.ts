@@ -2,17 +2,7 @@ export type Project = {
   url: string;
   title: string;
   description?: string;
-  picture: {
-    srcSet: string;
-    media: string;
-    height: number;
-    width: number;
-  }[];
-  image: {
-    src: string;
-    height: number;
-    width: number;
-  };
+  imageSrc: string[];
 };
 
 export type SimpleIcon = {
@@ -20,8 +10,6 @@ export type SimpleIcon = {
   color?: string;
   path: string;
 };
-
-export type Variant = "dark" | "light";
 
 export type ErrorComponent = {
   error: Error;

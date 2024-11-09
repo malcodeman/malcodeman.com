@@ -1,13 +1,12 @@
-import Image from "next/image";
 import { ExternalLinkIcon } from "lucide-react";
-import { Project as ProjectType } from "../../types";
+import { Project as ProjectType } from "@/types";
 import { GridItem } from "./GridItem";
 import { Heading } from "@/ui/Heading";
 import { Text } from "@/ui/Text";
 import { IconButton } from "@/ui/IconButton";
 
 function Project(props: ProjectType) {
-  const { url, title, description, picture, image, ...rest } = props;
+  const { url, title, description, imageSrc, ...rest } = props;
   return (
     <a {...rest} href={url} target="_blank" rel="noreferrer">
       <GridItem className="relative flex h-full flex-col bg-[#F9F9F8] dark:bg-[#222221]">
@@ -21,25 +20,9 @@ function Project(props: ProjectType) {
           {title}
         </Heading>
         <Text className="mb-4">{description}</Text>
-        <picture className="mt-auto rounded-lg object-cover">
-          {picture.map((picture) => (
-            <source
-              key={picture.srcSet}
-              srcSet={picture.srcSet}
-              media={picture.media}
-              height={picture.height}
-              width={picture.width}
-            />
-          ))}
-          <Image
-            src={image.src}
-            alt=""
-            className="mt-auto rounded-lg object-cover"
-            height={image.height}
-            width={image.width}
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 768px, 1024px"
-            priority
-          />
+        <picture className="mt-auto aspect-video">
+          <source srcSet={imageSrc[1]} media="(min-width: 640px)" />
+          <img src={imageSrc[0]} alt="" />
         </picture>
       </GridItem>
     </a>

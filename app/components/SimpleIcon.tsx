@@ -1,4 +1,4 @@
-import { SimpleIcon as SimpleIconType } from "../../types";
+import { SimpleIcon as SimpleIconType } from "@/types";
 
 function SimpleIcon(props: SimpleIconType) {
   const { size = 24, color = "currentColor", path, ...rest } = props;

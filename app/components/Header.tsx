@@ -13,7 +13,10 @@ export function Header() {
   return (
     <header className="container mx-auto flex justify-between px-10 py-5">
       <Link href="/" className="hidden items-center sm:flex">
-        <AstronautHelmetIcon size={16} className="mr-1 text-[#EB5E41]" />
+        <AstronautHelmetIcon
+          size={16}
+          className="mr-1 text-[#92310a] dark:text-[#fdba74]"
+        />
         malcodeman
       </Link>
       <div className="flex items-center gap-6">
@@ -21,7 +24,8 @@ export function Header() {
           <Link
             href="/"
             className={cn({
-              "text-[#EB5E41] underline transition-colors": active === "home",
+              "text-[#92310a] underline transition-colors dark:text-[#fdba74]":
+                active === "home",
             })}
             onClick={() => setActive("home")}
           >
@@ -30,7 +34,7 @@ export function Header() {
           <Link
             href="/#projects"
             className={cn({
-              "text-[#EB5E41] underline transition-colors":
+              "text-[#92310a] underline transition-colors dark:text-[#fdba74]":
                 active === "projects",
             })}
             onClick={() => setActive("projects")}
@@ -40,7 +44,7 @@ export function Header() {
           <Link
             href="/#contact"
             className={cn({
-              "text-[#EB5E41] underline transition-colors":
+              "text-[#92310a] underline transition-colors dark:text-[#fdba74]":
                 active === "contact",
             })}
             onClick={() => setActive("contact")}
