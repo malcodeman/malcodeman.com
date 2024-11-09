@@ -8,15 +8,20 @@ import { siGithub } from "simple-icons";
 import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { REPO_URL } from "@/lib/constants";
+import { useFavicon } from "@/hooks/useFavicon";
 import SimpleIcon from "./SimpleIcon";
 
 export function Header() {
   const [active, setActive] = useState("home");
   const { theme, setTheme } = useTheme();
+  const [favicon, setFavicon] = useState("/favicon_dark.ico");
 
   function toggleTheme() {
     setTheme(theme === "light" ? "dark" : "light");
+    setFavicon(theme === "light" ? "/favicon_dark.ico" : "/favicon_light.ico");
   }
+
+  useFavicon(favicon);
 
   return (
     <header className="container mx-auto flex justify-between px-10 py-5">
