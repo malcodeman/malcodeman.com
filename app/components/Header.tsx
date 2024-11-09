@@ -5,10 +5,18 @@ import { IconButton } from "@/ui/IconButton";
 import Link from "next/link";
 import { useState } from "react";
 import { siGithub } from "simple-icons";
+import { useTheme } from "next-themes";
+import { MoonIcon, SunIcon } from "lucide-react";
+import { REPO_URL } from "@/lib/constants";
 import SimpleIcon from "./SimpleIcon";
 
 export function Header() {
   const [active, setActive] = useState("home");
+  const { theme, setTheme } = useTheme();
+
+  function toggleTheme() {
+    setTheme(theme === "light" ? "dark" : "light");
+  }
 
   return (
     <header className="container mx-auto flex justify-between px-10 py-5">
@@ -52,12 +60,21 @@ export function Header() {
             Contact
           </Link>
         </nav>
-        <div className="h-6 w-[1px] bg-[#E9E8E6] dark:bg-[#2A2A28]" />
-        <a href="https://github.com/malcodeman/malcodeman.com" target="_blank">
-          <IconButton variant="ghost" aria-label="GitHub repository">
-            <SimpleIcon size={16} path={siGithub.path} />
+        <div className="hidden h-6 w-[1px] bg-[#E9E8E6] dark:bg-[#2A2A28] sm:block" />
+        <div className="hidden sm:flex">
+          <IconButton
+            variant="ghost"
+            aria-label="Toggle theme"
+            onClick={toggleTheme}
+          >
+            {theme === "light" ? <SunIcon size={16} /> : <MoonIcon size={16} />}
           </IconButton>
-        </a>
+          <a href={REPO_URL} target="_blank">
+            <IconButton variant="ghost" aria-label="GitHub repository">
+              <SimpleIcon size={16} path={siGithub.path} />
+            </IconButton>
+          </a>
+        </div>
       </div>
     </header>
   );

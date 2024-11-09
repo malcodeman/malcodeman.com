@@ -48,3 +48,5 @@ export const PROJECTS: Project[] = [
     imageSrc: ["/lurkstation_mobile.webp", "/lurkstation_desktop.webp"],
   },
 ];
+
+export const REPO_URL = "https://github.com/malcodeman/malcodeman.com";

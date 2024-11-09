@@ -6,6 +6,7 @@ import { GridItem } from "./components/GridItem";
 import { Header } from "./components/Header";
 import { PROJECTS } from "./lib/constants";
 import Project from "./components/Project";
+import { ContactMeBodyParagraph } from "./components/ContactMeBodyParagraph";
 
 function Home() {
   return (
@@ -24,9 +25,7 @@ function Home() {
               and web3. Currently living in Berlin 🐻."
               />
             </Text>
-            <Text>
-              I like running 🏃‍♂️, hiking ⛰️ and writing code in dark theme 🌙.
-            </Text>
+            <ContactMeBodyParagraph />
           </div>
           <ContactMe />
         </GridItem>
