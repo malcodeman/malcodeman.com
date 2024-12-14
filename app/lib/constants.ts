@@ -44,6 +44,12 @@ export const PROJECTS: Project[] = [
     description: "Content oriented reddit client.",
     imageSrc: ["/lurkstation_mobile.webp", "/lurkstation_desktop.webp"],
   },
+  {
+    url: "https://www.mersiha.ai",
+    title: "mersiha.ai",
+    description: "My wife's personal website.",
+    imageSrc: ["/mersiha_mobile.webp", "/mersiha_desktop.webp"],
+  },
 ];
 
 export const REPO_URL = "https://github.com/malcodeman/malcodeman.com";
