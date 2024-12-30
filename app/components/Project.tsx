@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from "lucide-react";
+import { LuExternalLink } from "react-icons/lu";
 import { Project as ProjectType } from "@/types";
 import { GridItem } from "./GridItem";
 import { Heading } from "@/ui/Heading";
@@ -14,7 +14,7 @@ function Project(props: ProjectType) {
           aria-label="External link"
           className="absolute right-4 top-4 rounded-[20px] border border-[#E9E8E6] dark:border-[#2A2A28]"
         >
-          <ExternalLinkIcon size={16} />
+          <LuExternalLink />
         </IconButton>
         <Heading level={2} className="text-2xl">
           {title}

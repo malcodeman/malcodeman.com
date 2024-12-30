@@ -4,12 +4,11 @@ import { cn } from "@/lib/utils";
 import { IconButton } from "@/ui/IconButton";
 import Link from "next/link";
 import { useState } from "react";
-import { siGithub } from "simple-icons";
+import { SiGithub } from "react-icons/si";
 import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon } from "lucide-react";
+import { LuMoon, LuSun } from "react-icons/lu";
 import { REPO_URL } from "@/lib/constants";
 import { useFavicon } from "@/hooks/useFavicon";
-import SimpleIcon from "./SimpleIcon";
 
 export function Header() {
   const [active, setActive] = useState("home");
@@ -72,11 +71,11 @@ export function Header() {
             aria-label="Toggle theme"
             onClick={toggleTheme}
           >
-            {theme === "light" ? <SunIcon size={16} /> : <MoonIcon size={16} />}
+            {theme === "light" ? <LuSun /> : <LuMoon />}
           </IconButton>
           <a href={REPO_URL} target="_blank">
             <IconButton variant="ghost" aria-label="GitHub repository">
-              <SimpleIcon size={16} path={siGithub.path} />
+              <SiGithub />
             </IconButton>
           </a>
         </div>
