@@ -39,12 +39,6 @@ export const PROJECTS: Project[] = [
     imageSrc: ["/resume_builder_mobile.webp", "/resume_builder_desktop.webp"],
   },
   {
-    url: "https://www.lurkstation.com",
-    title: "lurkstation.com",
-    description: "Content oriented reddit client.",
-    imageSrc: ["/lurkstation_mobile.webp", "/lurkstation_desktop.webp"],
-  },
-  {
     url: "https://www.mersiha.ai",
     title: "mersiha.ai",
     description: "My wife's personal website.",
