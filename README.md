@@ -12,8 +12,8 @@ My online portfolio. Made with performance in mind. ⚡
 ```
 git clone https://github.com/malcodeman/malcodeman.com.git
 cd malcodeman.com
-yarn install
-yarn dev
+pnpm install
+pnpm run dev
 ```
 
 ## License
